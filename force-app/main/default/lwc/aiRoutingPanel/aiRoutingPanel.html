@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="AI Routing Decision" icon-name="custom:custom63">
+        <template if:true={hasInsight}>
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                <div class="slds-grid slds-wrap slds-gutters_small">
+                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                        <p class="slds-text-title">Category</p>
+                        <p class="slds-text-heading_small">
+                            {insight.Predicted_Category__c}
+                        </p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                        <p class="slds-text-title">Queue</p>
+                        <p class="slds-text-heading_small">
+                            {insight.Predicted_Queue__c}
+                        </p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                        <p class="slds-text-title">Confidence</p>
+                        <span class={confidenceClass}>
+                            {insight.Confidence__c}
+                        </span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                        <p class="slds-text-title">Escalation</p>
+                        <lightning-icon
+                            if:true={insight.Escalation__c}
+                            icon-name="utility:warning"
+                            variant="warning"
+                            size="small">
+                        </lightning-icon>
+                        <span if:false={insight.Escalation__c}>No</span>
+                    </div>
+                </div>
+                <div class="slds-p-top_small">
+                   <lightning-button
+                       variant="base"
+                        label={reasoningButtonLabel}
+                        onclick={toggleReasoning}>
+                    </lightning-button>
+                    <template if:true={showReasoning}>
+                        <div class="slds-box slds-m-top_small
+                                     slds-theme_shade">
+                            <p class="slds-text-body_regular">
+                                {reasoningText}
+                            </p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+        <template if:false={hasInsight}>
+            <div class="slds-p-around_medium">
+                <p class="slds-text-color_weak">
+                    No AI routing data available for this case.
+                </p>
+            </div>
+        </template>
+    </lightning-card>
+</template>
