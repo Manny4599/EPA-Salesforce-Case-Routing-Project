@@ -1,1 +1,25 @@
-:host { display: block; }
+  :host { display: block; }
+  
+  .sla-bar-container {
+      height: 8px;
+      background: #f3f3f3;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 4px;
+  }
+  
+  .sla-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s;
+  }
+  
+  .sla-high { background: #ea001e; }
+  .sla-medium { background: #fe9339; }
+  .sla-low { background: #2e844a; }
+  
+  .sla-score {
+      font-size: 12px;
+      color: #706e6b;
+      margin-top: 4px;
+  }
