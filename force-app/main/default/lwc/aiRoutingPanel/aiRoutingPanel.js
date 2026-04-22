@@ -50,6 +50,31 @@
           if (risk >= 0.4) return 'sla-bar sla-medium';
           return 'sla-bar sla-low';
       }
+      
+      get routingMethodBadge() {
+          const method = this.data?.routingMethod;
+          if (method === 'AI') return 'slds-badge slds-theme_success';
+          if (method === 'PII') return 'slds-badge slds-theme_error';
+          return 'slds-badge';
+      }
+  
+      get routingMethod() {
+          return this.data?.routingMethod || 'Unknown';
+      }
+  
+      get formattedTimestamp() {
+          const ts = this.insight?.Routing_Timestamp__c;
+          if (!ts) return '';
+          return new Date(ts).toLocaleString('en-GB', {
+              day: 'numeric', month: 'short', year: 'numeric',
+              hour: '2-digit', minute: '2-digit'
+          });
+      }
+  
+      get isManuallyRerouted() {
+          return this.data?.manuallyRerouted === true;
+      }
+
   
       get reasoningText() {
           const resp = this.insight?.Agentforce_AI_Response__c;

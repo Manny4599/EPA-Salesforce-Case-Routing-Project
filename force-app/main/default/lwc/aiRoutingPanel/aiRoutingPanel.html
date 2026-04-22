@@ -35,6 +35,25 @@ Replace the entire file — adds the SLA bar section after the confidence/escala
                       </div>
                       <p class="sla-score">{slaRiskDisplay}</p>
                   </div>
+
+                  
+                  <div class="slds-grid slds-wrap slds-gutters_small slds-p-top_small">
+                      <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                          <p class="slds-text-title">Routing Method</p>
+                          <span class={routingMethodBadge}>{routingMethod}</span>
+                      </div>
+                      <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                          <p class="slds-text-title">Routed At</p>
+                          <p class="slds-text-body_small">{formattedTimestamp}</p>
+                      </div>
+                  </div>
+                  <template if:true={isManuallyRerouted}>
+                      <div class="rerouted-banner">
+                          <lightning-icon icon-name="utility:refresh" size="xx-small"></lightning-icon>
+                          <span class="slds-m-left_xx-small">This case was manually rerouted</span>
+                      </div>
+                  </template>
+
   
                   <div class="slds-p-top_small">
                       <lightning-button
