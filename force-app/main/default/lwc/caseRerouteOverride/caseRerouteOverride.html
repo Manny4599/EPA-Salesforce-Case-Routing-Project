@@ -1,0 +1,43 @@
+<template>
+    <lightning-quick-action-panel header="Override AI Routing">
+        <div class="slds-p-around_medium">
+            <p class="slds-text-body_regular slds-m-bottom_medium">
+                Override the AI routing decision and reassign this case to a different queue, it will flag the case as manually rerouted.
+            </p>
+
+            <lightning-combobox
+                label="New Queue"
+                value={selectedQueue}
+                options={queueOptions}
+                onchange={handleQueueChange}
+                placeholder="Select a queue"
+                required
+                class="slds-m-bottom_medium">
+            </lightning-combobox>
+
+            <lightning-textarea
+                label="Reason for Override"
+                value={reason}
+                onchange={handleReasonChange}
+                placeholder="Explain why the AI routing was incorrect"
+                max-length="500"
+                required
+                class="slds-m-bottom_medium">
+            </lightning-textarea>
+        </div>
+
+        <div slot="footer">
+            <lightning-button
+                label="Cancel"
+                onclick={handleCancel}
+                class="slds-m-right_x-small">
+            </lightning-button>
+            <lightning-button
+                label="Reroute Case"
+                variant="brand"
+                onclick={handleSubmit}
+                disabled={isSubmitDisabled}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>
