@@ -42,6 +42,17 @@ export default class CaseRerouteOverride extends LightningElement {
         return len > 400 ? 'char-count char-warning' : 'char-count';
     }
 
+    get selectedQueueLabel() {
+        if (!this.selectedQueue) return '';
+        const option = this.queueOptions.find(o => o.value === this.selectedQueue);
+        return option ? option.label : '';
+    }
+
+    get showConfirmation() {
+        return this.selectedQueue && this.reason;
+    }
+
+
 
     handleCancel() {
         this.dispatchEvent(new CloseActionScreenEvent());
