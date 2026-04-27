@@ -1,3 +1,23 @@
-:host {
-    display: block;
-}
+  :host {
+      display: block;
+  }
+
+  .char-count {
+      font-size: 12px;
+      color: #706e6b;
+      margin-top: 4px;
+      text-align: right;
+  }
+
+  .char-warning {
+      color: #fe9339;
+  }
+
+  .confirmation-box {
+      background: #e8f5e9;
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #2e7d32;
+  }
