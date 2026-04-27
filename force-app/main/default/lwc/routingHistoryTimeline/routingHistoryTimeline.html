@@ -1,0 +1,23 @@
+  <template>
+      <lightning-card title="Routing History" icon-name="standard:flow">
+          <template if:true={hasEvents}>
+              <div class="timeline-container">
+                  <template for:each={events} for:item="event">
+                      <div class={event.timelineClass} key={event.key}>
+                          <div class="timeline-dot"></div>
+                          <div class="timeline-content">
+                              <p class="timeline-title">{event.title}</p>
+                              <p class="timeline-detail">{event.detail}</p>
+                              <p class="timeline-time">{event.formattedTime}</p>
+                          </div>
+                      </div>
+                  </template>
+              </div>
+          </template>
+          <template if:false={hasEvents}>
+              <div class="slds-p-around_medium">
+                  <p class="slds-text-color_weak">No routing history available.</p>
+              </div>
+          </template>
+      </lightning-card>
+  </template>
