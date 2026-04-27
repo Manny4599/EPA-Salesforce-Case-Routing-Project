@@ -16,7 +16,7 @@ export default class CaseRerouteOverride extends LightningElement {
             { label: 'Billing', value: '00Gfj000008Kg4v' },
             { label: 'General Enquiries', value: '00Gfj000008fkft' },
             { label: 'Complaints', value: '00Gfj000008fmYj' },
-            { label: 'Exception Queue', value: '00Gfj000008fmfB' }
+            { label: 'Review Queue', value: '00Gfj000008fmfB' }
         ];
     }
 
@@ -31,7 +31,7 @@ export default class CaseRerouteOverride extends LightningElement {
     handleReasonChange(event) {
         this.reason = event.detail.value;
     }
-    
+
     get reasonCharCount() {
         const len = this.reason ? this.reason.length : 0;
         return len + ' / 500 characters';
