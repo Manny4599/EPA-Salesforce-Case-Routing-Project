@@ -1,21 +1,7 @@
 {
   "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
-    }
+    { "path": "force-app", "default": true }
   ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "name": "EPAProjectCaseRouting",
-=======
-  "name": "MyProject",
->>>>>>> 55093507a4c23d3cf89378d05e8b540423d5ff9c
-=======
-  "name": "MyProject",
->>>>>>> 55093507a4c23d3cf89378d05e8b540423d5ff9c
-  "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "66.0",
-  "defaultLwcLanguage": "javascript"
+  "sourceApiVersion": "59.0"
 }
