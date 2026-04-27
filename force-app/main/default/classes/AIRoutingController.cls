@@ -12,7 +12,6 @@ public with sharing class AIRoutingController {
         ];
         return insights.isEmpty() ? null : insights[0];
     }
-<<<<<<< HEAD
 
     @AuraEnabled(cacheable=true)
       public static Map<String, Object> getRoutingData(Id caseId) {
@@ -41,6 +40,3 @@ public with sharing class AIRoutingController {
       }
 
 }
-=======
-}
->>>>>>> 55093507a4c23d3cf89378d05e8b540423d5ff9c

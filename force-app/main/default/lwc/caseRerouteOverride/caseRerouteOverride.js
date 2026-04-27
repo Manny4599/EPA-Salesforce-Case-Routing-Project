@@ -31,6 +31,17 @@ export default class CaseRerouteOverride extends LightningElement {
     handleReasonChange(event) {
         this.reason = event.detail.value;
     }
+    
+    get reasonCharCount() {
+        const len = this.reason ? this.reason.length : 0;
+        return len + ' / 500 characters';
+    }
+
+    get reasonCharClass() {
+        const len = this.reason ? this.reason.length : 0;
+        return len > 400 ? 'char-count char-warning' : 'char-count';
+    }
+
 
     handleCancel() {
         this.dispatchEvent(new CloseActionScreenEvent());
